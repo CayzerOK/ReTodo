@@ -6,7 +6,7 @@ class USER {
     public $nickname;
     public $UUID;
     public function __construct() {
-        if (!empty($token)) {
+        if (!empty($_SESSION['uuid'])) {
             MYSQL::query('CREATE TABLE IF NOT EXISTS `users` (
                                   `id` BIGINT NOT NULL AUTO_INCREMENT,
                                   `uuid` BINARY NOT NULL,
@@ -22,6 +22,7 @@ class USER {
             $this->UUID = uniqid('reTodo', true);
 
             session_start([
+                'admin'=>$this->admin,
                 'uuid'=>$this->UUID,
                 'nickname'=>$this->nickname,
             ]);
