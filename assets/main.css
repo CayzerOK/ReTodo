@@ -1,0 +1,27 @@
+.mainContent {
+    width: 80vw;
+    margin: auto;
+    box-sizing: border-box;
+    min-height: 100%;
+    padding-bottom: 90px;
+}
+.mainFooter {
+    height: 80px;
+    margin-top: -80px;
+}
+.mainHeader {
+    display: flex;
+    background: white;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.headLogo {
+    width: 50px;
+    height: 50px;
+}
+
+body {
+    background-image: url("/assets/img/background.jpg");
+    object-fit: cover;
+}
