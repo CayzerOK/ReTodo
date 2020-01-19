@@ -10,8 +10,8 @@
         <link rel="stylesheet" href="/assets/main.css">
     </head>
     <body>
-        <div class="mainHeader"><?php echo $header ?></div>
-        <div class="mainContent"><?php echo $content ?></div>
-        <div class="mainFooter"><?php echo $footer ?></div>
+        <div class="mainHeader pageRootElem"><?php echo $header ?></div>
+        <div class="pageRootElem"><?php echo $content ?></div>
+        <div class="pageRootElem"><?php echo $footer ?></div>
     </body>
 </html>

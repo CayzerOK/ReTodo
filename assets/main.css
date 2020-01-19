@@ -1,24 +1,52 @@
-.mainContent {
-    width: 80vw;
-    margin: auto;
-    box-sizing: border-box;
-    min-height: 100%;
-    padding-bottom: 90px;
-}
-.mainFooter {
-    height: 80px;
-    margin-top: -80px;
-}
-.mainHeader {
-    display: flex;
+.pageRootElem {
+    margin: 5px auto;
     background: white;
     border-radius: 5px;
     padding: 5px;
+    width: 80vw;
+
+    -webkit-box-shadow: 3px 6px 14px -4px rgba(0,0,0,0.35);
+    -moz-box-shadow: 3px 6px 14px -4px rgba(0,0,0,0.35);
+    box-shadow: 3px 6px 14px -4px rgba(0,0,0,0.35);
+}
+
+.mainHeader {
+    font-family: "Franklin Gothic", serif;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
 }
 
 .headLogo {
-    width: 50px;
-    height: 50px;
+    width: 10vw;
+    min-width: 40px;
+    height: 40px;
+    margin: 4px;
+}
+
+.btn {
+    border-radius: 5px;
+    color: #322e3d;
+    text-align: center;
+    padding: 4px;
+    cursor: pointer;
+    box-shadow: 0 5px 5px rgba(0,0,0,0);
+    transition: box-shadow 0.3s ease-in-out;
+    user-select: none;
+}
+
+.btn:hover {
+    box-shadow: 0 5px 15px rgba(0,0,0,.3);
+}
+
+
+#loginBTN {
+    flex-grow: 1;
+}
+
+.headerTitle {
+
+    flex-grow: 3;
 }
 
 body {
