@@ -2,7 +2,7 @@
 
 class MYSQL {
     static private $connection = false;
-    static public $result;
+    static private $result;
 
     public function __construct() {
         self::connect();
@@ -21,5 +21,8 @@ class MYSQL {
             self::connect();
             self::query($string);
         }
+    }
+    public static function getResult() {
+        return self::$result;
     }
 }

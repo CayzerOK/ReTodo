@@ -34,6 +34,17 @@ class ROUTER {
             $this->error404($controllerPath);
             return;
         }
+
+        if (empty($_SESSION['uuid'])) {
+            session_start();
+            $_SESSION = [
+                'admin' => false,
+                'uuid' => uniqid('reTodo', true),
+                'nickname' => "Гость",
+                'guest' => true
+            ];
+        }
+
         $controller = new $controllerName;
 
         if(method_exists($controller, $actionName)) {

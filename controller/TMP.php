@@ -3,10 +3,6 @@ class TMP {
 
     static private $links;
 
-    public function __construct() {
-
-    }
-
     static function add($template, $content = null) {
         $modelName = 'tmp_'.$template;
         $template = $modelName.'.php';
@@ -33,7 +29,13 @@ class TMP {
         TMP::add('mainFooter');
         $footer = ob_get_clean();
 
+        $jsmain = scandir($_SERVER['DOCUMENT_ROOT']."/assets/js/");
+        for($i = 2, $iMax = count($jsmain); $i < $iMax; $i++) {
+            self::$links .= "<script src='/assets/js/".$jsmain[$i]."'></script>";
+        }
+
         $links = self::$links;
+
 
         include_once($_SERVER['DOCUMENT_ROOT']."/template/layout.php");
     }
