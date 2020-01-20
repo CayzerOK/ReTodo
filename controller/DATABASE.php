@@ -1,6 +1,6 @@
 <?php
 
-class MYSQL {
+class DATABASE {
     static private $connection = false;
     static private $result;
 
@@ -10,13 +10,12 @@ class MYSQL {
 
     static function connect() {
         $config = json_decode(file_get_contents($_SERVER['DOCUMENT_ROOT'].'/config/mysql.json'), true);
-        self::$connection = mysqli_connect($config['target'], $config['user'], $config['password'], $config['basename']) or die('Не удалось соединиться: ' . mysql_error());
+        self::$connection = new mysqli($config['target'], $config['user'], $config['password'], $config['basename']) or die('Не удалось соединиться: ' . mysql_error());
     }
 
     static function query($string) {
         if (self::$connection) {
-            self::$result = mysql_query($string) or die('Неудачный запрос: ' . mysql_error());
-            mysql_free_result(self::$result);
+            self::$result = self::$connection->query($string) or die("Не удалось создать таблицу: (" . self::$connection->errno . ") " . self::$connection->error);
         } else {
             self::connect();
             self::query($string);

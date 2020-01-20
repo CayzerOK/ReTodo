@@ -1,3 +1,35 @@
+.input {
+    border: 2px solid white;
+    font-size: 14px;
+    border-radius: 5px;
+    text-align: center;
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+.input:focus {
+    outline: none;
+    border: 2px solid #d66a4e94;
+
+}
+
+.input:hover {
+    -webkit-box-shadow: 0 0 6px 0 rgba(0,0,0,0.35);
+    -moz-box-shadow: 0 0 6px 0 rgba(0,0,0,0.35);
+    box-shadow: 0 0 6px 0 rgba(0,0,0,0.35);
+}
+
+.loginInput {
+    width: 196px;
+}
+
+#loginForm {
+    display: none;
+    position: absolute;
+    width: 200px;
+    top: 10px;
+    right: 10vw;
+}
+
 .pageRootElem {
     margin: 5px auto;
     background: white;
@@ -5,9 +37,9 @@
     padding: 5px;
     width: 80vw;
 
-    -webkit-box-shadow: 3px 6px 14px -4px rgba(0,0,0,0.35);
-    -moz-box-shadow: 3px 6px 14px -4px rgba(0,0,0,0.35);
-    box-shadow: 3px 6px 14px -4px rgba(0,0,0,0.35);
+    -webkit-box-shadow: 0 0 6px 0 rgba(0,0,0,0.35);
+    -moz-box-shadow: 0 0 6px 0 rgba(0,0,0,0.35);
+    box-shadow: 0 0 6px 0 rgba(0,0,0,0.35);
 }
 
 .mainHeader {
@@ -36,7 +68,7 @@
 }
 
 .btn:hover {
-    box-shadow: 0 5px 15px rgba(0,0,0,.3);
+    box-shadow: 0 0 6px 0 rgba(0,0,0,0.35);
 }
 
 
@@ -45,11 +77,66 @@
 }
 
 .headerTitle {
-
     flex-grow: 3;
 }
 
 body {
     background-image: url("/assets/img/background.jpg");
     object-fit: cover;
+}
+
+.regTitle {
+    text-align: center;
+    margin-left: 40px;
+    width: 120px;
+    display: block;
+}
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 36px;
+    height: 22px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+    border-radius: 200px;
+
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 14px;
+    width: 14px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+    border-radius: 200px;
+}
+
+input:checked + .slider {
+    background-color: #d66a4e94;
+}
+
+input:checked + .slider:before {
+    -webkit-transform: translateX(14px);
+    -ms-transform: translateX(14px);
+    transform: translateX(14px);
 }
