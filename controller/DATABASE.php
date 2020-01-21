@@ -15,7 +15,21 @@ class DATABASE {
 
     static function query($string) {
         if (self::$connection) {
-            self::$result = self::$connection->query($string) or die("Не удалось создать таблицу: (" . self::$connection->errno . ") " . self::$connection->error);
+            $query = self::$connection->query($string);
+            if (is_bool($query)) {
+                switch ($query) {
+                    case true:
+                        self::$result = true;
+                        break;
+                    case false:
+                        self::$result = self::$connection->error;
+                        break;
+                }
+            } else {
+                if ($query->num_rows > 0) {
+                    self::$result = $query->fetch_all();
+                } else self::$result = false;
+            }
         } else {
             self::connect();
             self::query($string);

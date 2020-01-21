@@ -1,11 +1,30 @@
 let register = false;
 
-function loginBTN() {
+function showLoginForm() {
     $('#loginForm').show();
 }
 
 function submitLogReg() {
-$.ajax()
+    let action = (register? 'register' : 'login');
+    let data = {
+        login: $('#loginIn').val(),
+        password: $('#passIn').val()
+    };
+    $.post("/auth/"+action,
+        data,
+        function(ret) {
+            ret = JSON.parse(ret);
+            if (ret.done) {
+                window.location.href = '/'
+            } else alert(ret.info);
+        });
+}
+
+function logout() {
+    $.post("/auth/logout",
+        function(){
+            window.location.href = '/'
+        });
 }
 
 

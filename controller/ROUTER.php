@@ -39,7 +39,7 @@ class ROUTER {
 
             $_SESSION = [
                 'admin' => false,
-                'uuid' => uniqid('reTodo', true),
+                'uuid' => uniqid('retodo', true),
                 'nickname' => "Гость",
                 'guest' => true
             ];
