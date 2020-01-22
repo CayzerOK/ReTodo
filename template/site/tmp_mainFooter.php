@@ -1,3 +1,3 @@
 <div class="footInfo">
-    (C) CayzerOK | Цайзер Никита Андреевич 2020
+    <a href="https://github.com/CayzerOK">Цайзер Никита Андреевич 2020</a>
 </div>

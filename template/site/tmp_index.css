@@ -1,3 +1,110 @@
-.mainContent {
+.control {
+    display: flex;
+    width: min-content;
+    margin: auto;
+}
+
+.taskInput {
+    margin: 4px 0;
+    width: 98%;
+}
+
+.sortElem {
+    padding: 4px;
+    margin: 4px;
+}
+
+.taskTextArea {
+    flex-grow: 1;
+    resize: none;
+    margin: 0;
+    margin-bottom: 10px;
+}
+
+#inputElem {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    flex-grow: 1;
+    width: 350px;
+}
+
+.sortControl {
+    margin: 4px;
+    display: flex;
+}
+
+#taskElem {
+    flex-grow: 9999;
+    display: flex;
+    flex-direction: column;
+}
+
+.submitBTN {
+    width: min-content;
+    margin: auto;
+    font-family: 'Franklin Gothic Medium', serif;
+    padding: 10px 20px;
+    background: #d66a4e94;
+    color: white;
+    user-select: none;
+    cursor: pointer;
+    border-radius: calc(10% + 4px);
+    white-space: nowrap;
+}
+
+.task {
+    display: flex;
+    background: #d3d3d37a;
+    margin: 4px;
+    border-radius: 6px;
+}
+
+.taskField {
+    background: white;
+    border-radius: 4px;
+    padding: 4px;
+    margin: 4px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.textView {
+    flex-grow: 1;
+    min-width: 50px;
+    flex-shrink: 100000;
+}
+
+.dataView {
+    width: 150px;
+    min-width: 50px;
+    max-width: 300px;
+}
+
+.taskCheck {
+    flex: none;
+    width: 24px;
+    margin: 4px;
+    border-radius: 30px;
+    background: white;
+    text-align: center;
+    font-weight: 600;
+}
+
+#pageNum {
+    font-family: 'Franklin Gothic', serif;
+    padding: 4px 10px;
 
 }
+
+.pageBTN {
+    width: 30px;
+    text-align: center;
+    font-family: 'Franklin Gothic Medium', serif;
+}
+
+#prewPage {
+    display: none;
+}
+

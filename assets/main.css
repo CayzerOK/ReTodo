@@ -6,6 +6,13 @@
     transition: box-shadow 0.3s ease-in-out;
 }
 
+.contentWrapper {
+    display: flex;
+    margin: auto;
+    width: calc(80vw + 16px);
+    flex-wrap: wrap;
+}
+
 .input:focus {
     outline: none;
     border: 2px solid #d66a4e94;
@@ -26,16 +33,18 @@
     display: none;
     position: absolute;
     width: 200px;
+    min-width: 200px;
     top: 10px;
     right: 10vw;
 }
 
 .pageRootElem {
-    margin: 5px auto;
+    margin: 4px;
     background: white;
     border-radius: 5px;
-    padding: 5px;
-    width: 80vw;
+    padding: 4px;
+
+    min-width: 300px;
 
     -webkit-box-shadow: 0 0 6px 0 rgba(0,0,0,0.35);
     -moz-box-shadow: 0 0 6px 0 rgba(0,0,0,0.35);
@@ -47,6 +56,12 @@
     font-size: 20px;
     display: flex;
     align-items: center;
+    width: 100%;
+}
+
+.mainFooter {
+    width: 100%;
+    text-align: center;
 }
 
 .headLogo {
